@@ -71,18 +71,17 @@ public class ThreadExampleA {
                         }
                     });
                     thread2.setPriority(priority2); // Встановлення пріоритету другого потоку
-                    thread2.start(); // Запуск другого потоку
+                    thread2.start(); 
                 }
             }
         });
 
-        frame.add(sliderPanel); // Додавання панелі з ползунком на вікно
-        frame.add(spinnerPanel); // Додавання панелі зі спіннерами на вікно
-        frame.add(startButton); // Додавання кнопки "Пуск" на вікно
-
-        frame.setSize(300, 180); // Встановлення розмірів вікна
-        frame.setLocationRelativeTo(null); // Встановлення положення вікна по центру екрана
-        frame.setResizable(false); // Заборона зміни розміру вікна
-        frame.setVisible(true); // Відображення вікна
+        frame.add(sliderPanel); 
+        frame.add(spinnerPanel); 
+        frame.add(startButton); 
+        frame.setSize(300, 180); // 
+        frame.setLocationRelativeTo(null); 
+        frame.setResizable(false); 
+        frame.setVisible(true); 
     }
 }
