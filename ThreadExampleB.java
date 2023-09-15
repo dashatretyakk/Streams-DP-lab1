@@ -7,8 +7,8 @@ public class ThreadExampleB {
     private static Thread thread1; // Перший потік
     private static Thread thread2; // Другий потік
     private static JSlider slider; // Повзунок для візуалізації потоків
-    private static JButton stopButton1; // Кнопка для зупинки першого потоку
-    private static JButton stopButton2; // Кнопка для зупинки другого потоку
+    private static JButton stopButton1; 
+    private static JButton stopButton2; 
     private static JSpinner prioritySpinner1; // Спіннер для вибору пріоритету першого потоку
     private static JSpinner prioritySpinner2; // Спіннер для вибору пріоритету другого потоку
     private static int semaphore = 1; // Семафор для управління потоками
@@ -18,31 +18,31 @@ public class ThreadExampleB {
         frame.setLayout(new FlowLayout()); // Встановлення менеджера розміщення FlowLayout
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Дія при закритті вікна
 
-        slider = new JSlider(0, 100); // Створення ползунка
-        slider.setMajorTickSpacing(10); // Встановлення великої поділки
-        slider.setMinorTickSpacing(10); // Встановлення малої поділки
+        slider = new JSlider(0, 100); 
+        slider.setMajorTickSpacing(10); 
+        slider.setMinorTickSpacing(10); 
         slider.setPaintTicks(true); // Відображення поділок на ползунку
         slider.setPaintLabels(true); // Відображення значень на ползунку
         slider.setPreferredSize(new Dimension(250, slider.getPreferredSize().height)); // Встановлення розмірів ползунка
 
-        JPanel sliderPanel = new JPanel(); // Панель для ползунка
+        JPanel sliderPanel = new JPanel(); 
         sliderPanel.setLayout(new BoxLayout(sliderPanel, BoxLayout.Y_AXIS)); // Встановлення менеджера розміщення BoxLayout
         sliderPanel.add(slider); // Додавання ползунка на панель
 
         prioritySpinner1 = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1)); // Спіннер для пріоритету першого потоку
         prioritySpinner2 = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1)); // Спіннер для пріоритету другого потоку
 
-        JPanel spinnerPanel = new JPanel(); // Панель для спіннерів
+        JPanel spinnerPanel = new JPanel(); 
         spinnerPanel.setLayout(new FlowLayout()); // Встановлення менеджера розміщення FlowLayout
-        spinnerPanel.add(new JLabel("Пріоритет 1:")); // Додавання напису "Пріоритет 1" на панель
+        spinnerPanel.add(new JLabel("Пріоритет 1:")); 
         spinnerPanel.add(prioritySpinner1); // Додавання спіннера для пріоритету першого потоку на панель
-        spinnerPanel.add(new JLabel("Пріоритет 2:")); // Додавання напису "Пріоритет 2" на панель
+        spinnerPanel.add(new JLabel("Пріоритет 2:")); 
         spinnerPanel.add(prioritySpinner2); // Додавання спіннера для пріоритету другого потоку на панель
 
-        JButton startButton1 = new JButton("ПУСК 1"); // Кнопка "ПУСК 1"
-        JButton startButton2 = new JButton("ПУСК 2"); // Кнопка "ПУСК 2"
-        stopButton1 = new JButton("СТОП 1"); // Кнопка "СТОП 1"
-        stopButton2 = new JButton("СТОП 2"); // Кнопка "СТОП 2"
+        JButton startButton1 = new JButton("ПУСК 1"); 
+        JButton startButton2 = new JButton("ПУСК 2"); 
+        stopButton1 = new JButton("СТОП 1"); 
+        stopButton2 = new JButton("СТОП 2"); 
 
         Dimension buttonSize = new Dimension(120, 30); // Розміри кнопок
         startButton1.setPreferredSize(buttonSize);
@@ -50,17 +50,17 @@ public class ThreadExampleB {
         stopButton1.setPreferredSize(buttonSize);
         stopButton2.setPreferredSize(buttonSize);
 
-        JPanel startButtonsPanel = new JPanel(); // Панель для кнопок "ПУСК"
+        JPanel startButtonsPanel = new JPanel(); 
         startButtonsPanel.setLayout(new FlowLayout()); // Встановлення менеджера розміщення FlowLayout
-        startButtonsPanel.add(startButton1); // Додавання кнопки "ПУСК 1" на панель
-        startButtonsPanel.add(startButton2); // Додавання кнопки "ПУСК 2" на панель
+        startButtonsPanel.add(startButton1); 
+        startButtonsPanel.add(startButton2); 
 
         JPanel stopButtonsPanel = new JPanel(); // Панель для кнопок "СТОП"
         stopButtonsPanel.setLayout(new FlowLayout()); // Встановлення менеджера розміщення FlowLayout
-        stopButtonsPanel.add(stopButton1); // Додавання кнопки "СТОП 1" на панель
-        stopButtonsPanel.add(stopButton2); // Додавання кнопки "СТОП 2" на панель
+        stopButtonsPanel.add(stopButton1); 
+        stopButtonsPanel.add(stopButton2); 
 
-        JLabel semaphoreStatusLabel = new JLabel("Статус семафора:                       вільно"); // Напис для статусу семафора
+        JLabel semaphoreStatusLabel = new JLabel("Статус семафора:                       вільно"); 
 
         startButton1.addActionListener(new ActionListener() {
             @Override
@@ -82,7 +82,7 @@ public class ThreadExampleB {
                             }
                         }
                     });
-                    thread1.start(); // Запуск потоку 1
+                    thread1.start(); 
                 }
             }
         });
@@ -107,7 +107,7 @@ public class ThreadExampleB {
                             }
                         }
                     });
-                    thread2.start(); // Запуск потоку 2
+                    thread2.start(); 
                 }
             }
         });
