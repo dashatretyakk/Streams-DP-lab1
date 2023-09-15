@@ -36,7 +36,7 @@ public class ThreadExampleA {
         spinnerPanel.add(new JLabel("Пріоритет 2:")); // Додавання напису "Пріоритет 2" на панель
         spinnerPanel.add(prioritySpinner2); // Додавання спіннера для пріоритету другого потоку на панель
 
-        JButton startButton = new JButton("Пуск"); // Кнопка "Пуск"
+        JButton startButton = new JButton("Пуск"); 
 
         startButton.addActionListener(new ActionListener() {
             @Override
@@ -56,7 +56,7 @@ public class ThreadExampleA {
                         }
                     });
                     thread1.setPriority(priority1); // Встановлення пріоритету першого потоку
-                    thread1.start(); // Запуск першого потоку
+                    thread1.start(); 
                 }
 
                 if (thread2 != null && thread2.isAlive()) { // Перевірка чи існує і живий другий потік
@@ -71,7 +71,7 @@ public class ThreadExampleA {
                         }
                     });
                     thread2.setPriority(priority2); // Встановлення пріоритету другого потоку
-                    thread2.start(); // Запуск другого потоку
+                    thread2.start(); 
                 }
             }
         });
